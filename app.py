@@ -22,5 +22,6 @@ if __name__ == "__main__":
         git.create_new_repo()
         github = GithubHandler()
         github.create_github_repo()
+        git.repo_setup()
     except OSError:
         print(f'Error to create project, {file_argument} folder already exists')
