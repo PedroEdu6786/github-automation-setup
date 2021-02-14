@@ -13,8 +13,11 @@ if __name__ == "__main__":
     
     file_argument = sys.argv[1] # name of project to create
     
-    folder_name = FolderGenerator()
-    folder_name.generate_folder(file_argument)
-    folder_name.navigate_to_folder(file_argument)
-    git = GitHandler()
-    git.create_new_repo()
+    try:
+        folder_name = FolderGenerator()
+        folder_name.generate_folder(file_argument)
+        folder_name.navigate_to_folder(file_argument)
+        git = GitHandler()
+        git.create_new_repo()
+    except OSError:
+        print(f'Error to create project, {file_argument} folder already exists')
