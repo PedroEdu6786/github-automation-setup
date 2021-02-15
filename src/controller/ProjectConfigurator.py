@@ -22,6 +22,7 @@ class ProjectConfigurator:
             self.create_project_folder(project_name)
             self.create_git_repo()
             self.create_github_repo()
+            self.create_initial_commit()
             self.view.display_project_created()
             
         except OSError:
