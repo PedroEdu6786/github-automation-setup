@@ -10,7 +10,6 @@ class FolderGenerator:
         folder_path = f'{self.path}/{folder_name}'
         try:
             os.mkdir(folder_path)
-            print(f'Successfully created folder {folder_name}')
         except OSError:
             raise OSError(f'Error to create folder {folder_name}')
             
